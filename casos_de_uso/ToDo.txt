@@ -1,0 +1,9 @@
+· Definir quien es el que cambia el intervalo de actualizaciones.
+· Es para cada curso o general? Nuestra primera version lo tendrá fijado, general.
+· Añadir en el diagrama el caso de uso Registrarse como usuario... Quizás no haga falta.
+· Ver si tenemos que documentar el caso de uso de Identificarse. Creo que no es necesario, ya que nosotros no vamos a usarlo.
+· Pensar más condiciones en los casos de uso.
+· Primero podríamos pasar de CalDAV y simplemente guardar fichero.
+· Revisar caso de uso Cargar calendario
+	-> Hace falta lo de ver las isntrucciones?
+

@@ -1,0 +1,11 @@
+NOTA: ESTO ES VIEJO, NO HACER CASO
+
+
+Los diagramas UML los haremos con Dia. Al guardar es muy importante desactivar la compresión. De esta manera el formato será texto, no binario. Aunque SVN (al contrario que CVS) puede manejar cambios de archivos binarios, es mejor así.
+
+Si alguien ha usado otro programa de diagramas que crea que está mejor, sería interesante probarlo.
+
+Para bajar el Dia en Windows: http://dia-installer.sf.net/
+
+Se recomienda guardar también una imagen en PNG de los diagramas creados/modificados para que los podamos ver sin tener que abrir el Dia.
+Los diagramas estarán en la carpeta html/images para poder verlos.

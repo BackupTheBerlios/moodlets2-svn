@@ -1,0 +1,113 @@
+-----------------------------------------------------
+Caso de uso: Configurar intervalo de actualizaciones.
+-----------------------------------------------------
+
+Contexto: El administrador o creador de un curso quiere definir cada cuánto tiempo se actualiza el fichero de calendario de un curso (o todos...).
+
+
+Actores primarios: Adminitrador, Creador del curso?
+Actores de soporte: No tiene.
+
+Precondiciones:
+- El Administrador o Creador ha de haberse identificado correctamente.
+
+Postcondiciones de éxito:
+- Queda definido un nuevo intervalo de actualizaciones.
+
+Postcondiciones de fracaso:
+- No se define un nuevo intervalo.
+
+Escenario de éxito principal:
+
+1. El Administrador o Creador se va a las propiedades de un curso (o a la web general).
+2. Elige cambiar el tiempo de actualizaciones.
+3. Introduce el intervalo.
+4. Se comprueba que el tiempo introducido es válido.
+5. Se guardan los cambios ¿ y <<actualiza Cron>> ?.
+6. Se informa a esa persona que los cambios han sido realizados correctamente.
+7. Se devuelve a ese usuario a la página de configuración.
+
+
+Extensiones:
+
+3.a. El usuario quiere cancelar el proceso.
+3.a.1. Se le devuelve a la página de configuración del curso
+
+4.a. Introduce un tiempo negativo, muy pequeño o muy grande.
+4.a.1. Volvemos al paso 3.
+
+Includes:
+
+- Comprobar Login.
+- ¿Actualizar Cron?
+
+-----------------------------------
+Caso de uso: Actualizar Calendario.
+-----------------------------------
+
+Contexto: Ha pasado el tiempo establecido y se quiere actualizar el Calendario iCal publicado de un curso.
+
+Actores primarios: Tiempo.
+Actores de soporte: No tiene.
+
+Precondiciones:
+- Ya ha transcurrido el tiempo entre actualización y actualización.
+
+Postcondiciones de éxito:
+- El calendario iCal del curso está al día.
+
+Postcondiciones de fracaso:
+- Ninguna.
+
+Escenario de éxito principal:
+
+1. Transcurre el tiempo establecido.
+2. Se <<exporta la agenda>> del curso a un calendario iCal.
+
+Includes:
+- Exportar agenda a calendario iCal.
+
+-----------------------------------------------
+Caso de uso: Cargar calendario en el ordenador.
+-----------------------------------------------
+
+Contexto: Un profesor o estudiante quiere cargar la agenda de un curso en su programa compatible con iCal (Apple iCal, Mozilla Sunbird, Mozilla Calendar...).
+
+
+Actores primarios: Estudiante o Profesor.
+Actores de soporte: No tiene.
+
+Precondiciones:
+- El profesor o estudiante se ha identificado correctamente.
+
+Postcondiciones de éxito:
+- El usuario tiene una versión actualizada del curso en su ordenador.
+
+Postcondiciones de fracaso:
+- No se define un nuevo intervalo.
+
+Escenario de éxito principal:
+
+1. El Estudiante o Profesor elige Cargar Calendario del curso.
+2. Se le muestran las instrucciones para usar CalDAV o cargar desde un fichero.
+3. El usuario procede a actualizar el calendario.
+4. Se actualiza el calendario del ordenador del usuario.
+5. Se devuelve al usuario a la página del curso.
+
+
+Extensiones:
+
+3.a. Utiliza CalDAV.
+3.a.1. Le dice al programa de calendario que se <<conecte al servidor CalDAV>>.
+3.a.2. Ir a 4.
+
+3.b. Utiliza fichero.
+3.b.1. Le dice al programa de calendario que <<cargue el fichero iCal>>.
+3.b.2. Ir a 4.
+
+Includes:
+- Comprobar Login.
+- Iniciar iCal o Sunbird.
+- ¿Conectar con CalDAV?
+- ¿Guardar fichero iCal?
+- ¿Cargar ficero iCal?
