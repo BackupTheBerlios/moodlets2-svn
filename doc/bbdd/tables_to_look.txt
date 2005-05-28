@@ -1,0 +1,2 @@
+mdl_event: se guardan los "eventos" del calendario, probablemente nuestra función de parsear el calendario se fijará en esta tabla
+mdl_modules: parece que aquí se tienen que registrar los módulos
