@@ -1,3 +1,15 @@
+New SQL tables to create:
+
+To save the configuration of each course:
+mdl_ical_config
+	id		Autonumeric
+	id_course	Course ID
+	sync_method	Way to sync: file ('a') or CalDav server ('s')
+	timemodified	Last time the file was modified
+
+To store when was the last time that a user sync with the course calendar:
+
+
 Tablas nuevas que hay que crear:
 
 Para guardar la configuración del módulo de cada curso:
