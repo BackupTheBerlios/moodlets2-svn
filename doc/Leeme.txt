@@ -1,0 +1,27 @@
+--------------------------------------------------
+Diseño del soporte de iCal para Moodle - Leeme.txt
+--------------------------------------------------
+Autores:
+	· Andreas Calvo Gómez
+	· Guillermo Miranda Álamo
+	· Diego Marrón Vida.
+
+
+
+Contenido de este ZIP:
+Raiz:
+	· Leeme.txt - Este archivo.
+	· casos_de_uso.png - Diagrama de casos de uso.
+	· casos_de_uso.html - Documentación de los casos de uso.
+	· db_es.html - Documentación acerca de las bases de datos.
+	· funcionalidades.html - Descripción de la funcionalidad que deseamos implementar.
+	· roadmap.html - Mapa de carretera, planning, con las etapas actuales y futuras.
+
+Carpeta html - previews de la primera fase:
+	· module.php.htm - Vista previa de cómo sería la pantalla de configuración del intervalo de actualizaciones.
+	· modules.php.htm - Vista de la configuración de módulos.
+	
+
+
+Más información:
+	· Web del proyecto: http://developer.berlios.de/projects/moodlets2
