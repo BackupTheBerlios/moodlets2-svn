@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Bases de datos</title>
+</head>
+
+<body>
+<p>Hay una serie de tablas de Moodle que est&aacute;n hechas y necesitamos utilizar para consultar:</p>
+<ul>
+	<li><strong>mdl_event</strong>: se guardan los &quot;eventos&quot; del calendario, probablemente nuestra funci&oacute;n de parsear el calendario se fijar&aacute; en esta tabla para recoger los eventos y guardarlos en el iCal.</li>
+    <li><strong>mdl_modules</strong>: parece que aqu&iacute; registraremos nuestro m&oacute;dulo.</li>
+</ul>
+<p>Por otro lado, tenemos que crear:</p>
+<ul>
+	<li><strong>mdl_ical_config</strong>: para guardar la configuraci&oacute;n del m&oacute;dulo de cada curso.<br />
+	Sus campos:
+		<ul>
+			<li><em>id</em> campo autonum&eacute;rico.</li>
+		    <li><em>id_course</em> curso.</li>
+		    <li><em>sync_method</em> manera de sincronizar: archivo ('a') o servidor CalDAV ('s').</li>
+		    <li><em>timemodified</em> &uacute;ltima vez que se actualiz&oacute; la fila.</li>
+        </ul>
+	</li>
+    <li><strong>mdl_ical_syncs</strong>: para almacenar cu&aacute;ndo fue la &uacute;ltima vez que sincroniz&oacute; un usuario con el calendario de un curso.
+    	<ul>
+    		<li><em>id</em> campo autonum&eacute;rico.</li>
+   		    <li><em>id_student</em> c&oacute;digo del estudiante.</li>
+    	    <li><em>id_course</em> c&oacute;digo del curso.</li>
+    	    <li><em>last_sync</em> fecha de la &uacute;ltima sincronizaci&oacute;n del usuario con el curso.</li>
+    	    <li><em>timemodified</em> norma de Moodle.</li>
+    	</ul>
+    </li>
+</ul>
+</body>
+</html>

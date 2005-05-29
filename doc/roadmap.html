@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Roadmap</title>
+</head>
+
+<body>
+<h4>Roadmap:</h4>
+<p>Consideramos que la primera implementaci&oacute;n deber&iacute;a ser lo m&aacute;s b&aacute;sica posible, para que su posible integraci&oacute;n en el proyecto Moodle sea muy poco costosa. </p>
+<ul>
+	<li><strong>S</strong>e crea un archivo iCal con el calendario de un curso cuando el usuario lo solicita.</li>
+    <li></li>
+    <li><em>Crear una interfaz para configurar el intervalo de actualizaciones y guardarlo, en un archivo.</em></li>
+    <li><em>Utilizar la base de datos para guardar y cargar la configuraci&oacute;n.</em></li>
+    <li>Imprimir s&oacute;lo los eventos que han cambiado desde la &uacute;ltima visita del usuario. Esto implicar&iacute;a no utilizar cron, sino actualizar al ser solicitada la sincronizaci&oacute;n.</li>
+</ul>
+<p>En un primer momento consideramos que ser&iacute;a buena idea programar en el cron un intervalo regular de actualizaci&oacute;n, que cada X tiempo se actualizara el fichero iCal con el calendario de un curso que los usuarios importan. No es una soluci&oacute;n viable ya que al importar un archivo iCal, los eventos que ya estaban en el calendario local se duplican. M&aacute;s informaci&oacute;n en <a href="http://developer.berlios.de/forum/forum.php?forum_id=11822">&eacute;sta noticia</a>.</p>
+<p>M&aacute;s adelante:</p>
+<ul>
+	<li>Utilizar el protocolo CalDAV para sincronizaci&oacute;n de calendarios. En la configuraci&oacute;n del m&oacute;dulo tendr&iacute;amos que guardar tambi&eacute;n la direcci&oacute;n del servidor y quiz&aacute;s otros par&aacute;metros relacionados. Lo hemos dejado como una futura implementaci&oacute;n ya que se tardar&iacute;a en aprender a utilizar el protocolo DAV y a habilitar un servidor con CalDAV. </li>
+</ul>
+</body>
+</html>
