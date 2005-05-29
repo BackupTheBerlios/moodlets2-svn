@@ -1,0 +1,18 @@
+Tablas nuevas que hay que crear:
+
+Para guardar la configuración del módulo de cada curso:
+mdl_ical_config
+	id		Campo autonumérico.
+	id_course	Curso.
+	sync_method	Manera de sincronizar: archivo ('a') o servidor CalDAV ('s').
+	timemodified	Ultima vez que se actualizó la fila.
+	
+
+
+Para almacenar cuándo fue la última vez que sincronizó un usuario con el calendario de un curso:
+mdl_ical_syncs
+	id		Campo autonumérico. Preferiríamos utilizar directamente el del estudiante.
+	id_student	Código del estudiante.
+	id_course	Código del curso
+	last_sync	Fecha de la última sincronización del usuario con el curso.
+	timemodified	En principio no haria falta, pero bueno, es norma.
