@@ -6,6 +6,9 @@
 </head>
 
 <body>
-&middot; No te olvides de decir que podemos reaprovechar el c&oacute;digo del calendario. 
+<p>Este m&oacute;dulo se basar&aacute; en el Calendario del moodle, el cual se encargara de parsear los eventos de los calendarios y guardarlos en un archivo del tipo iCal.<br />
+El archivo principal en el que debemos hacer hincapi&eacute; es &quot;view.php&quot;, el cual se encarga de leer de las bases de datos la informaci&oacute;n necesaria para mostrar por pantalla los eventos. Esto nos ser&aacute; muy &uacute;til ya que reaprovechando la mayor&iacute;a de este c&oacute;digo podemos crear nuestra funci&oacute;n que guarde en formato iCal.<br />
+Nuestra funci&oacute;n principal se encargara de procesar los datos del Calendario y decidir&aacute; si escribir el fichero iCal o no, bas&aacute;ndose en las preferencias y datos del usuario/curso.<br />
+Tan solo necesitaremos una tabla (con sus propias tuplas) para guardar los datos necesarios sobre las preferencias de cada usuario.</p>
 </body>
 </html>
