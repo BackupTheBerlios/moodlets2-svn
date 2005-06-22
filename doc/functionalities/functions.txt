@@ -1,0 +1,20 @@
+LIB.PHP:
+*   ical_parse
+    should call to ical_upcoming_events
+    receive a object with all events
+    call ical_event and decide what to write
+    write it down to a ical file
+    
+*   ical_upcoming_events
+    should call a function in calendar, what will process all events
+    create the object with all events
+    return to ical_parse
+    
+*   ical_event
+    given an object, will decide which kind of object it is, and process it
+    
+NOTES:
+who should write: ical_event or ical_parse?
+future features (or not so future ;)):
+* ability the let the admin set how to update the ical file (cron or after an insert)
+* maybe some kind of custom set up in the ical file (like author or course title)
