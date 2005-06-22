@@ -1,0 +1,4 @@
+*********** UPDATE ***************
+SINCE IT SEEMS THAT WE'RE NOT GONNA NEED TO MAKE ANY TABLE (first release
+will not store any configuration data, just parse the calendar data) WE'RE
+NOT MAKING ANY mysql QUERY TO ADD TABLES
