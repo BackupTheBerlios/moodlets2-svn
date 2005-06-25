@@ -1,0 +1,24 @@
+1) BEGIN:VCALENDAR
+2) VERSION
+3) PRODID
+   :-//moodle.org/NONSGML iCal Module//EN
+4) BEGIN:VEVENT
+5) UID: idmysql-courseid@moodle.org
+6) SUMMARY: titulo
+7) CATEGORIA: nombre del curso
+8) STATUS: CONFIRMED
+9) CLASS: PUBLIC
+10) DTSTART: YYYYMMDDTHHMMSSZ
+11) DTEND
+12) DTSTAMP
+13) LAST-MODIFIED
+12) END:VEVENT
+13) END:VCALENDAR
+
+
+-- todo el dia
+DTSTART:
+;VALUE=DATE
+:YYYYMMDD
+-- repetido
+hay que contar que el repeteatid es el mismo, y solo cambia el timestart (el timeduration es el mismo)

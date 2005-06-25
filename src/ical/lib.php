@@ -9,12 +9,15 @@ require_once("../../calendar/lib.php");
 
 
 function ical_parse () {
+	// imprimimos a fichero
 }
 
 function ical_calendar_upcoming_events () {
+	// cogemos todos los cursos
 }
 
-function ical_event () {
+function ical_event ($event) {
+	// parseamos el evento
 }
 
 function ical_cron () {

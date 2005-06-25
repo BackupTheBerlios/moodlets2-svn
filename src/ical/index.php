@@ -9,7 +9,18 @@
     require_once("../../calendar/lib.php");
     
     // COSAS NUESTRAS DE PRUEBA - GUILLE
-	calendar_get_mini(1,0,2);
+	// calendar_get_mini(1,0,2);
+	$courses = array();
+	$courses[0]=2;
+	$events = calendar_get_upcoming($courses, $groups, $users, get_user_preferences('calendar_lookahead', CALENDAR_UPCOMING_DAYS), get_user_preferences('calendar_maxevents', CALENDAR_UPCOMING_MAXEVENTS));
+	echo 'prueba';
+	echo '<div class="eventlist">';
+	foreach($events as $event){
+		//calendar_print_event($event);
+		echo '<strong>nombre</strong> ' . $event->name . ' <strong>curso</strong> ' . $event->courseid . ' <strong>tiempo inicial</strong> ' . $event->timestart . ' <strong>tiempo final</strong> ' . $event->timeduration;
+		echo '<br/>';
+	}
+	echo '</div>';
 	// FIN COSAS
 
     require_variable($id);   // course
