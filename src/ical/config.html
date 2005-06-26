@@ -1,0 +1,27 @@
+<form method="post" action="module.php" name="form">
+<input type="hidden" name="sesskey" value="<?php echo $USER->sesskey ?>">
+
+<table cellpadding=9 cellspacing=0 >
+<tr>
+  <td colspan="3" align="center">
+     <div><b><?php print_string('config', 'ical')?></b></div>
+     <div style="font-size: 0.8em;">(<?php print_string('explainconfig', 'ical')?>)</div>
+  </td>
+</tr>
+<tr valign="top">
+  <td align="right">ical_path:</td>
+  <td>
+    <input name="ical_path" type="text" size="25" value="<?php print_string($CFG->ical_path) ?>" />
+    </td>
+    <td>
+    <?php print_string("configpath", "ical") ?>
+    </td>
+</tr>
+
+<tr>
+    <td colspan=3 align=center>
+    <input type="submit" value="<?php print_string("savechanges") ?>"></td>
+</tr>
+</table>
+
+</form>

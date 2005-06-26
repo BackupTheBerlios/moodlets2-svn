@@ -1,63 +1,13 @@
 <?PHP // $Id: index.php,v 1.1 2003/09/30 02:45:19 moodler Exp $
 
-/// This page lists all the instances of NEWMODULE in a particular course
-/// Replace NEWMODULE with the name of your module
-
-    require_once("../../config.php");
-    require_once("lib.php");
-    // Incluimos la libreria del calendar
-    require_once("../../calendar/lib.php");
-    
-    // COSAS NUESTRAS DE PRUEBA - GUILLE
-	// calendar_get_mini(1,0,2);
-//	$courses = array();
-//	$courses[0]=2;
-	$courses = get_records_sql('SELECT *, 1 FROM '.$CFG->prefix.'course');
-	foreach($courses as $course){
-		echo 'BEGIN:VCALENDAR' . '<br/>';
-		echo 'VERSION' . '<br/>';
-		echo ' :2.0' . '<br/>';
-		echo 'PRODID' . '<br/>';
-		echo '&nbsp;' . ':-//Moodle.org//NONSGML iCal Module v0.1 beta//EN' . '<br/>';
-		// expect creating/modifying the course file
-		$events = calendar_get_upcoming(array(0=>$course->id), $groups, $users, get_user_preferences('calendar_lookahead', CALENDAR_UPCOMING_DAYS), get_user_preferences('calendar_maxevents', CALENDAR_UPCOMING_MAXEVENTS));
-		echo '<div class="eventlist">';
-		foreach($events as $event){
-			if ($event->visible){
-				echo 'BEGIN:VEVENT'. '<br/>';
-				echo 'UID'. '<br/>';
-				echo '&nbsp;' . ':' . $event->id . '-' . $event->timestart. '<br/>';
-				echo 'SUMMARY'. '<br/>';
-				echo '&nbsp;' . ':' . $event->name. '<br/>';
-				echo 'CATEGORIES'. '<br/>';
-				echo '&nbsp;' . ':' . $course->fullname. '<br/>';
-				echo 'STATUS'. '<br/>';
-				echo '&nbsp;' . ':CONFIRMED'. '<br/>';
-				echo 'CLASS'. '<br/>';
-				echo '&nbsp;' . ':PUBLIC'. '<br/>';
-				echo 'DESCRIPTION:' . $event->description . '<br/>';		
-				if ($event->timeduration != 0){
-					echo 'DTSTART'. '<br/>';
-					echo '&nbsp;' . ':' . gmdate("Ymd\THis\Z",$event->timestart). '<br/>';
-					echo 'DTEND'. '<br/>';
-					echo ':' . gmdate("Ymd\THis\Z",($event->timestart + $event->timeduration)). '<br/>';
-				} else {
-					echo 'DTSTART'. '<br/>';
-					echo '&nbsp;' . ';VALUE=DATE'. '<br/>';
-					echo '&nbsp;' . ':' . gmdate("Ymd",$event->timestart). '<br/>';
-					echo 'DTEND'. '<br/>';
-					echo '&nbsp;' . ';VALUE=DATE'. '<br/>';
-					echo '&nbsp;' . ':' . gmdate("Ymd",($event->timestart + 86400)). '<br/>';
-				}
-				echo 'DTSTAMP'. '<br/>';
-				echo '&nbsp;' . ':' . gmdate("Ymd\THis\Z",$event->timestart). '<br/>';
-				echo 'END:VEVENT'. '<br/>';
-			}
-		}
-		echo 'END:VCALENDAR' . '<br/>';
-	}
-	echo '</div>';
-	// FIN COSAS
+    require_once('../../config.php');
+    require_once($CFG->dirroot.'/lib/datalib.php');
+    require_once($CFG->dirroot.'/calendar/lib.php');
+    require_once($CFG->dirroot.'/mod/ical/lib.php');
+	//ical_parse();
+	$update->id = 15;
+	$update->cron = 99;
+	$done = update_record("modules",$update);
 
     require_variable($id);   // course
 
