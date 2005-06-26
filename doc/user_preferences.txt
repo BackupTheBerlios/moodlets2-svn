@@ -1,0 +1,4 @@
+USER PREFERENCES
+* path to the webdav/caldav directory
+* cron time? is this global?
+* course specific/on demand ics generation
