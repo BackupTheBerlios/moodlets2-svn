@@ -6,6 +6,6 @@
 /////////////////////////////////////////////////////////////////////////////////
 
 $module->version  = 2005062601;  // The current module version (Date: YYYYMMDDXX)
-$module->cron     = 60;       // Once a day (by default)
+$module->cron     = 86400;       // Once a day (by default)
 
 ?>
