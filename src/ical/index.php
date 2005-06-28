@@ -4,10 +4,7 @@
     require_once($CFG->dirroot.'/lib/datalib.php');
     require_once($CFG->dirroot.'/calendar/lib.php');
     require_once($CFG->dirroot.'/mod/ical/lib.php');
-	//ical_parse();
-	$update->id = 15;
-	$update->cron = 99;
-	$done = update_record("modules",$update);
+	ical_parse();
 
     require_variable($id);   // course
 

@@ -33,7 +33,7 @@ function ical_parse (){
 		// Now, for each course...
 		foreach($courses as $course){
 			$count = get_record_sql('SELECT *, 1 FROM '.$CFG->prefix.'event WHERE courseid='.$course->id);
-			if ( (!empty($count)) && ($fp = @fopen($CFG->ical_path . '/' . $course->shortname . '.ics', "w")) ){
+			if ( (!empty($count)) && ($course->id != 0) && ($fp = @fopen($CFG->ical_path . '/' . $course->shortname . '.ics', "w")) ){
 				// Write the header
 				$write = fwrite($fp,"BEGIN:VCALENDAR\nVERSION\n :2.0\nPRODID\n :-//Moodle.org//NONSGML iCal Module v0.1 beta//EN");
 				// expect creating/modifying the course file
