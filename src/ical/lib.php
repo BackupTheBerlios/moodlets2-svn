@@ -22,13 +22,15 @@
  */
 function ical_parse (){
 	global $CFG;
-	
-	set_config('prefix_ical_path', '../../webdav');
     
     // Retrieves all the courses
     $courses = get_records_sql('SELECT *, 1 FROM '.$CFG->prefix.'course');
     
-    // Firstly, we must check if the path to store the iCal files exists...
+    // First, we must check if the path to store the iCal files exists...
+    if (empty($CFG->ical_path)){
+    	$webdav_dir = $CFG->dirroot . '\webdav';
+    	set_config('ical_path', $webdav_dir);
+    }
     if (is_dir($CFG->ical_path)){
 		// Now, for each course...
 		foreach($courses as $course){
