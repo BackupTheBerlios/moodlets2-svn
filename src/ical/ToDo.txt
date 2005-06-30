@@ -1,1 +1,2 @@
 · Use absolute paths to the WebDAV folder.
+· An interface to list the courses and their iCal files.
