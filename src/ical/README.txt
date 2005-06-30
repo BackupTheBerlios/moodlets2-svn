@@ -1,7 +1,7 @@
 Installation
 ------------
 1.- Copy 'lang' and 'mod' to the moodle directory.
-2.- If you haven't done this, create a 'webdav' directory inside the moodle dir. If you want to give the users the ability to synchronize their calendar software with your moodle site, give that folder the required rights to WebDAV access.
+2.- If you haven't done this, create a directory named 'webdav' inside the moodle dir. If you want to give the users the ability to synchronize their calendar software with your moodle site, give that folder the required rights to WebDAV access.
 
 
 Module Configuration
@@ -11,6 +11,9 @@ You can only change the folder where the iCal files will be placed, this can be 
 
 Apache 2 Configuration
 ----------------------
+To enable WebDAV on Apache 2, you can follow this short guide: [http://techrepublic.com.com/5100-10877_11-5560569.html#]
+
+Use the folder specified on the iCal module configuration as the WebDAV folder. The transfer of the files in that folder will be done through WebDAV protocol.
 
 
 How to synchronize with Sunbird
