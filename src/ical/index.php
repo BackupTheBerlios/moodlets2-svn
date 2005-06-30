@@ -1,10 +1,7 @@
-<?PHP // $Id: index.php,v 1.1 2003/09/30 02:45:19 moodler Exp $
+<?PHP
 
     require_once('../../config.php');
-    require_once($CFG->dirroot.'/lib/datalib.php');
-    require_once($CFG->dirroot.'/calendar/lib.php');
-    require_once($CFG->dirroot.'/mod/ical/lib.php');
-	ical_parse();
+    require_once('lib.php');
 
     require_variable($id);   // course
 

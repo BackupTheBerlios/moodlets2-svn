@@ -1,18 +1,11 @@
-<?PHP  // $Id: lib.php,v 1.3 2004/06/09 22:35:27 gustav_delius Exp $
+<?PHP
 
 /**
  * Library of functions and constants for iCal module.
  * @author Andreas Calvo Gomez <andreas.calvo01@campus.upf.es>
  * @author Guillermo Miranda Alamo <guillermo.miranda01@campus.upf.es>
  */
-
-
-	/**
-	 * Since it's based on the Calendar module, we should at least read
-	 * from its lib.php
-	 */
-    require_once($CFG->dirroot.'/config.php');
-    require_once($CFG->dirroot.'/calendar/lib.php');
+	require_once($CFG->dirroot.'/calendar/lib.php');
 
 /**
  * This functions parses all the events, and creates one iCal
@@ -25,17 +18,20 @@ function ical_parse (){
     
     // Retrieves all the courses
     $courses = get_records_sql('SELECT *, 1 FROM '.$CFG->prefix.'course');
-    
+
     // First, we must check if the path to store the iCal files exists...
     if (empty($CFG->ical_path)){
-    	$webdav_dir = $CFG->dirroot . '\webdav';
-    	set_config('ical_path', $webdav_dir);
+    	set_config('ical_path', 'webdav');    	
     }
-    if (is_dir($CFG->ical_path)){
+    
+    $webdav_dir = $CFG->dirroot.'/'.$CFG->ical_path;
+    	
+
+    if (is_dir($webdav_dir)){
 		// Now, for each course...
 		foreach($courses as $course){
 			$count = get_record_sql('SELECT *, 1 FROM '.$CFG->prefix.'event WHERE courseid='.$course->id);
-			if ( (!empty($count)) && ($course->id != 0) && ($fp = @fopen($CFG->ical_path . '/' . $course->shortname . '.ics', "w")) ){
+			if ( (!empty($count)) && ($course->id != 0) && ($fp = @fopen($webdav_dir . '/' . $course->shortname . '.ics', "w")) ){
 				// Write the header
 				$write = fwrite($fp,"BEGIN:VCALENDAR\nVERSION\n :2.0\nPRODID\n :-//Moodle.org//NONSGML iCal Module v0.1 beta//EN");
 				// expect creating/modifying the course file
@@ -63,7 +59,7 @@ function ical_parse (){
 			}
 		}
     } else {
-    	echo 'The directory ' . $CFG->prefix_ical_path . ' is not valid.';
+    	echo 'The directory ' . $webdav_dir . ' is not valid.';
     }
 }
 
